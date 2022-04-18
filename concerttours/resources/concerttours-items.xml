@@ -57,8 +57,10 @@
 					<persistence type="property" />
 				</attribute>
 				<attribute qualifier="name" type="java.lang.String">
+					<defaultvalue/>
 					<description>name of band</description>
 					<persistence type="property" />
+					<modifiers optional="false" unique="true" />
 				</attribute>
 				<attribute qualifier="history" type="localized:java.lang.String">
 					<description>history of band</description>
@@ -66,6 +68,10 @@
 				</attribute>
 				<attribute qualifier="albumSales" type="java.lang.Long">
 					<description>official global album sales</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="image" type="MediaContainer">
+					<description>picture of band in different formats</description>
 					<persistence type="property" />
 				</attribute>
 			</attributes>
@@ -106,6 +112,20 @@
 				<attribute qualifier="content" type="java.lang.String">
 					<description>fuller description of the news item</description>
 					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="NotLoremIpsumConstraint" extends="AttributeConstraint"
+				  autocreate="true" generate="true">
+			<description>Custom constraint which checks for Lorem Ipsum text.</description>
+			<attributes>
+				<attribute qualifier="annotation" type="java.lang.Class"
+						   redeclare="true">
+					<modifiers write="false" initial="true" optional="false" />
+					<defaultvalue>
+						concerttours.constraints.NotLoremIpsum.class
+					</defaultvalue>
 				</attribute>
 			</attributes>
 		</itemtype>

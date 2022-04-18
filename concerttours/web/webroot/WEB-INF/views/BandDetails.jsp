@@ -5,6 +5,7 @@
 <body>
 <h1>Band Details</h1>
 Band Details for ${band.name}
+<li><a href="./bands/${band.id}"><img src="${band.imageURL}" />${band.name}</a></li>
 <p>${band.description}</p>
 <p>Music type:</p>
 <ul>
